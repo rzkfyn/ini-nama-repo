@@ -1,0 +1,29 @@
+{
+  "name": "wa-manga-downloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -e .ts --exec ts-node index.ts",
+    "build": "tsc --build ./tsconfig.json",
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.8",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "image-size": "^1.1.1",
+    "pdfkit": "^0.15.0",
+    "puppeteer": "^23.5.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  }
+}

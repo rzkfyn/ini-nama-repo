@@ -1,0 +1,6 @@
+/node_modules
+.env
+/images
+__ignore*
+/pdf
+.DS_Store
