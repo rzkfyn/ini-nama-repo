@@ -27,7 +27,6 @@ export async function downloadPdf(link: string): Promise<string | undefined> {
     console.info('Start download images...');
     let index = 0;
     for (const imageUrl of res) {
-      console.log(imageUrl);
       const response = await axios.get(imageUrl, { responseType: 'arraybuffer' });
       const fileData = Buffer.from(response.data, 'binary');
       fs.writeFileSync(`${imagesFolder}/${index}.jpg`, fileData);
@@ -78,8 +77,6 @@ export const convertImagesToPdf = async (imagesFolder: string, mangaUrl: string)
         const ext = path.extname(file).toLowerCase();
         return ext === '.jpg' || ext === '.jpeg' || ext === '.png';
       });
-
-    console.log(imageFiles);
     const firstImageDimensions = sizeOf(path.join(imagesFolder, imageFiles[0])); 
     const doc = new PDFDocument({
       margins: { bottom: 5, left: 5, right: 5, top: 5 },

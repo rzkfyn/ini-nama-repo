@@ -4,3 +4,4 @@
 __ignore*
 /pdf
 .DS_Store
+/lib

@@ -1,0 +1,1 @@
+{"root":["./index.ts","./commands/general/ping.ts","./commands/otaku/dlmanga.ts","./events/connectionupdate.ts","./events/credsupdate.ts","./events/messagesupsert.ts","./helper/westmangadownload.ts"],"version":"5.6.2"}
