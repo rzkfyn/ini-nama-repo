@@ -30,9 +30,14 @@ export default {
     sock: WASocket
   }) => {
     const { messages } = m;
-    const message = messages[0];    
-    const text = message.message?.extendedTextMessage?.text ?? message.message?.conversation;
-
+    const message = messages[0];
+    let text: string | null | undefined;
+    if (message.message?.imageMessage || message.message?.videoMessage) {
+      text = message.message?.videoMessage?.caption ?? message.message?.imageMessage?.caption;
+    } else {
+      text = message.message?.extendedTextMessage?.text ?? message.message?.conversation;
+    }
+    if (!text) return;
     if (!text?.startsWith(prefix as string)) return;
 
     const args = text?.slice((prefix as string).length).trim().split(/ /g);
